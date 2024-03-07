@@ -15,6 +15,7 @@ coverage/
 
 # dotenv environment file
 .env
+server/**/*.env
 
 # Database files
 # Adjust the pattern based on your MongoDB setup
@@ -57,4 +58,3 @@ __tests__/
 *.test.js
 
 # Optional: Ignore generated documentation files
-docs/
