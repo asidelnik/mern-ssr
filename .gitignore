@@ -1,0 +1,60 @@
+# Node.js modules
+node_modules/
+
+# Build output (if applicable)
+build/
+dist/
+out/
+
+# Dependency lock files
+package-lock.json
+yarn.lock
+
+# Testing coverage files
+coverage/
+
+# dotenv environment file
+.env
+
+# Database files
+# Adjust the pattern based on your MongoDB setup
+# (e.g., for MongoDB Atlas connections, exclude connection string file)
+mongodb/*
+!public/assets/data.json*  # Optional: Allow specific data files in a public directory
+
+# IDE temporary or cache files
+.idea/
+.vscode/
+.eslintcache
+
+# Temporary log files
+*.log
+
+# Compiled TypeScript files (if applicable)
+*.js  # For pure JavaScript projects
+*.ts  # If using TypeScript
+
+# Editor config files
+.editorconfig
+
+# Webpack config (if applicable)
+webpack.config.js
+
+# Other editor-specific files
+*.sublime-project
+*.sublime-workspace
+*.swo
+
+# Local history files
+.DS_Store
+
+# OS specific temporary files
+Thumbs.db
+
+# Optional: Ignore specific test files
+__tests__/
+*.spec.js
+*.test.js
+
+# Optional: Ignore generated documentation files
+docs/
