@@ -1,17 +1,16 @@
-*Tasks*
-[] - 1 - Server - set routes
-[] - 2 - Server - test routes
-[] - 3 - Server - convert to typescript
-[] - 4 - Client - create a project with vite or next.js
-[] - 5 - Client - create routing
-[] - 6 - Client - GET data from server (all requests)
-[] - 7 - Client - like cat POST request
-[] - 8 - Client - UI & design
+## Tasks
+- [ ] - 1 - Server - set routes
+- [ ] - 2 - Server - test routes
+- [ ] - 3 - Server - convert to typescript
+- [ ] - 4 - Client - create a project with vite or next.js
+- [ ] - 5 - Client - create routing
+- [ ] - 6 - Client - GET data from server (all requests)
+- [ ] - 7 - Client - like cat POST request
+- [ ] - 8 - Client - UI & design
 
 Maybe implement express-openapi
 
-
-*Cat object*
+## Cat type
 {
   "name": "String",
   "birthday": "ISODate",
@@ -31,10 +30,10 @@ Maybe implement express-openapi
   "breed": "String" 
 }
 
-*Cat images*
+## Cat data
+### Images
 https://en.wikipedia.org/wiki/List_of_cat_breeds
-
-*Cat names*
+### Names
 Buttercup
 Bubbles
 Blossom
