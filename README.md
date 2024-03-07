@@ -11,6 +11,7 @@
 Maybe implement express-openapi
 
 ## Cat type
+```
 {
   "name": "String",
   "birthday": "ISODate",
@@ -29,6 +30,7 @@ Maybe implement express-openapi
   "likeCount": "Number",
   "breed": "String" 
 }
+```
 
 ## Cat data
 ### Images
