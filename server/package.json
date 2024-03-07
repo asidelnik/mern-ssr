@@ -5,8 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "node --env-file=config.env server.js",
-    "db-insert": "node --env-file=config.env db/db-insert.js"
+    "test": "node --env-file=config.env src/server.js",
+    "db-insert": "node --env-file=config.env src/db/db-insert.js"
   },
   "keywords": [],
   "author": "",
