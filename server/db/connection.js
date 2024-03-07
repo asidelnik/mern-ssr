@@ -8,12 +8,13 @@ const client = new MongoClient(uri, {
     deprecationErrors: true,
   },
 });
+const dbName = 'pets';
 
 try {
   // Connect the client to the server
   await client.connect();
   // Send a ping to confirm a successful connection
-  await client.db("sample_airbnb").command({ ping: 1 });
+  await client.db(dbName).command({ ping: 1 });
   console.log(
     "Pinged your deployment. You successfully connected to MongoDB!"
   );
@@ -21,6 +22,6 @@ try {
   console.error(err);
 }
 
-let db = client.db("sample_airbnb");
+let db = client.db(dbName);
 
 export default db;
