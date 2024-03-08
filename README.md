@@ -1,5 +1,5 @@
 ## Tasks
-- [ ] - 1 - Server - set routes
+- [x] - 1 - Server - set routes
 - [ ] - 2 - Server - test routes
 - [ ] - 3 - Server - convert to typescript
 - [ ] - 4 - Client - create a project with vite or next.js
