@@ -2,15 +2,14 @@
 - [x] - 1 - Server - set routes
 - [x] - 2 - Client - Next.JS project started
 - [x] - 3 - Client - routing
+- [ ] - 4 - Client - GET data from the server (all requests)
 
-- [ ] - 4 - Server - test routes
-- [ ] - 5 - Server - convert to typescript
--- [ ] - a - Add commenting to typescript
-- [ ] - 6 - Client - create a project with vite or next.js
-- [ ] - 7 - Client - create routing
-- [ ] - 8 - Client - GET data from server (all requests)
-- [ ] - 9 - Client - like cat POST request
-- [ ] - 10 - Client - UI & design
+- [ ] - 5 - Server - test routes
+- [ ] - 6 - Server - convert to typescript
+- [ ] -- Add commenting to typescript
+
+- [ ] - 7 - Client - like cat POST request
+- [ ] - 8 - Client - UI & design
 
 Maybe implement express-openapi
 
