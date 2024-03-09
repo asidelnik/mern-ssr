@@ -11,9 +11,10 @@ const collectionName = "cats";
 cats.get("/most-liked", async (req, res) => {
   try {
     let collection = await db.collection(collectionName);
-    const results = await collection.find({})
+    const results = await collection.find()
       .sort({ likeCount: -1 })
-      .limit(5);
+      .limit(5)
+      .toArray();
     res.send(results).status(200);
     // res.json(mostLikedCats);
   } catch (err) {
