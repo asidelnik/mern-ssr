@@ -5,9 +5,9 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [mostLikedCats, setMostLikedCats] = useState<CatSmallCard[]>([]); // State to store fetched data
-  const [isLoading, setIsLoading] = useState(false); // State for loading indicator
-  const [error, setError] = useState<string | null>(null); // State for error handling
+  const [cats, setCats] = useState<CatSmallCard[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const router = useRouter();
 
   useEffect(() => {
@@ -19,8 +19,8 @@ export default function Home() {
     try {
       const response = await fetch(baseUrl + serverPaths.mostLikedCats);
       const data = await response.json();
-      setMostLikedCats(data);
-      console.log(data);
+      setCats(data);
+      // console.log(data);
     } catch (err: unknown) {
       if (err instanceof TypeError) {
         // Handle fetch TypeError
@@ -46,7 +46,7 @@ export default function Home() {
         <button type="submit">Search</button>
       </form>
 
-      {mostLikedCats.map((cat: CatSmallCard) => (
+      {cats.map((cat: CatSmallCard) => (
         <div key={cat._id}>
           {cat.name}
           {/* <CatSmallCard cat={cat} /> */}

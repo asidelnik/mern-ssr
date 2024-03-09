@@ -31,7 +31,8 @@ cats.get('/search/:name', async (req, res) => {
     const results = await collection.find({
       name: { $regex: name, $options: 'i' } // Case-insensitive search
     })
-      .limit(10);
+      .limit(10)
+      .toArray();
     res.send(results).status(200);
     // res.json(results);
   } catch (err) {
