@@ -74,6 +74,11 @@ cats.put('/add-like/:id', async (req, res) => {
   }
 });
 
+cats.get('*', (req, res) => {
+  res.status(404).json({ message: 'Cat resource not found' });
+});
+
+
 export default cats;
 
 // cats.patch("/:id", async (req, res) => {
