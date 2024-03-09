@@ -1,11 +1,6 @@
 import express from "express";
-
-// This will help us connect to the database
 import db from "../db/connection.js";
-
-// This help convert the id from string to ObjectId for the _id.
 import { ObjectId } from "mongodb";
-
 // router is an instance of the express router.
 // We use it to define our routes.
 // The router will be added as a middleware and will take control of requests starting with path /cats.
@@ -62,7 +57,7 @@ cats.get("/:id", async (req, res) => {
   }
 });
 
-app.put('/add-like/:id', async (req, res) => {
+cats.put('/add-like/:id', async (req, res) => {
   try {
     const query = { _id: new ObjectId(req.params.id) };
     const updates = {
@@ -79,30 +74,27 @@ app.put('/add-like/:id', async (req, res) => {
   }
 });
 
-// This section will help you update a record by id.
-cats.patch("/:id", async (req, res) => {
-  try {
-    const query = { _id: new ObjectId(req.params.id) };
-    const updates = {
-      $set: {
-        name: req.body.name,
-        position: req.body.position,
-        level: req.body.level,
-      },
-    };
-
-    let collection = await db.collection(collectionName);
-    let result = await collection.updateOne(query, updates);
-    res.send(result).status(200);
-  } catch (err) {
-    console.error(err);
-    res.status(500).send("Error updating record");
-  }
-});
-
-
-
 export default cats;
+
+// cats.patch("/:id", async (req, res) => {
+//   try {
+//     const query = { _id: new ObjectId(req.params.id) };
+//     const updates = {
+//       $set: {
+//         name: req.body.name,
+//         position: req.body.position,
+//         level: req.body.level,
+//       },
+//     };
+
+//     let collection = await db.collection(collectionName);
+//     let result = await collection.updateOne(query, updates);
+//     res.send(result).status(200);
+//   } catch (err) {
+//     console.error(err);
+//     res.status(500).send("Error updating record");
+//   }
+// });
 
 // Validate the ID format (optional but recommended)
 // if (!mongoose.Types.ObjectId.isValid(id)) {

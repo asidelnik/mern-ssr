@@ -2,6 +2,7 @@
 - [x] - 1 - Server - set routes
 - [ ] - 2 - Server - test routes
 - [ ] - 3 - Server - convert to typescript
+-- [ ] - 3.1 - Add commenting to typescript
 - [ ] - 4 - Client - create a project with vite or next.js
 - [ ] - 5 - Client - create routing
 - [ ] - 6 - Client - GET data from server (all requests)
