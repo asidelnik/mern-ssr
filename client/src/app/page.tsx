@@ -1,11 +1,12 @@
 'use client'
+import CatSmallCard from "@/components/cat-small-card/CatSmallCard";
 import { baseUrl, serverPaths } from "@/constants/api";
-import { CatSmallCard } from "@/types/CatSmallCard";
+import { CatType } from "@/types/CatType";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [cats, setCats] = useState<CatSmallCard[]>([]);
+  const [cats, setCats] = useState<CatType[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
@@ -19,7 +20,7 @@ export default function Home() {
     try {
       const path = `${baseUrl}${serverPaths.mostLikedCats}`;
       const response = await fetch(path);
-      const data: CatSmallCard[] = await response.json();
+      const data: CatType[] = await response.json();
       setCats(data);
     } catch (err: unknown) {
       if (err instanceof TypeError) {
@@ -46,10 +47,9 @@ export default function Home() {
         <button type="submit">Search</button>
       </form>
 
-      {cats.map((cat: CatSmallCard) => (
+      {cats.map((cat: CatType) => (
         <div key={cat._id}>
-          {cat.name}
-          {/* <CatSmallCard cat={cat} /> */}
+          <CatSmallCard {...cat} />
         </div>
       ))}
     </>

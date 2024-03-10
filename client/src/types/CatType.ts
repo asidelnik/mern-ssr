@@ -1,4 +1,4 @@
-export type CatSmallCard = {
+export type CatType = {
   _id: string;
   name: string;
   birthday: string; // ISODate is not a valid TypeScript type, use string instead

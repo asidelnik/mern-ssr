@@ -4,4 +4,5 @@ export const serverPaths = {
   mostLikedCats: '/cats/most-liked',
   catSearch: '/cats/search/',
   cats: '/cats/',
+  likeCat: '/cats/add-like',
 };
