@@ -15,8 +15,7 @@ cats.get("/most-liked", async (req, res) => {
       .sort({ likeCount: -1 })
       .limit(5)
       .toArray();
-    res.send(results).status(200);
-    // res.json(mostLikedCats);
+    res.status(200).json(results);
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: 'Error fetching data' });
@@ -24,17 +23,17 @@ cats.get("/most-liked", async (req, res) => {
 });
 
 // GET - cats filtered by name
-cats.get('/search/:name', async (req, res) => {
+cats.get('/search', async (req, res) => {
   try {
-    const name = req.params.name;
+    console.log('req.query.name', req.query.name);
+    const name = req.query.name;
     let collection = await db.collection(collectionName);
     const results = await collection.find({
-      name: { $regex: name, $options: 'i' } // Case-insensitive search
+      name: new RegExp(name, 'i')
     })
       .limit(10)
       .toArray();
-    res.send(results).status(200);
-    // res.json(results);
+    res.status(200).json(results);
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: 'Error fetching data' });
