@@ -21,10 +21,10 @@ export default function CatsSearch() {
   const fetchData = async (name: string) => {
     setIsLoading(true);
     try {
-      const response = await fetch(baseUrl + serverPaths.catSearch + `?name=${name}`);
-      const data = await response.json();
+      const path = `${baseUrl}${serverPaths.catSearch}?name=${name}`;
+      const response = await fetch(path);
+      const data: CatSmallCard[] = await response.json();
       setCats(data);
-      console.log('cats-search', data);
     } catch (err: unknown) {
       if (err instanceof TypeError) {
         // Handle fetch TypeError
@@ -41,14 +41,13 @@ export default function CatsSearch() {
   return (
     <>
       <div>Cats Search</div>
-      <Suspense fallback={<div>Loading...</div>}>
+      {/* <Suspense fallback={<div>Loading...</div>}></Suspense> */}
         {cats.map((cat: CatSmallCard) => (
           <div key={cat._id}>
             {cat.name}
             {/* <CatSmallCard cat={cat} /> */}
           </div>
         ))}
-      </Suspense>
     </>
   )
 }

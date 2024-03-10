@@ -17,10 +17,10 @@ export default function Home() {
   const fetchData = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch(baseUrl + serverPaths.mostLikedCats);
-      const data = await response.json();
+      const path = `${baseUrl}${serverPaths.mostLikedCats}`;
+      const response = await fetch(path);
+      const data: CatSmallCard[] = await response.json();
       setCats(data);
-      // console.log(data);
     } catch (err: unknown) {
       if (err instanceof TypeError) {
         // Handle fetch TypeError
