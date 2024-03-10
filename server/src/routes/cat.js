@@ -25,7 +25,7 @@ cats.get("/most-liked", async (req, res) => {
 // GET - cats filtered by name
 cats.get('/search', async (req, res) => {
   try {
-    console.log('req.query.name', req.query.name);
+    // console.log('req.query.name', req.query.name);
     const name = req.query.name;
     let collection = await db.collection(collectionName);
     const results = await collection.find({
@@ -60,15 +60,21 @@ cats.get("/:id", async (req, res) => {
 
 cats.put('/add-like/:id', async (req, res) => {
   try {
-    const query = { _id: new ObjectId(req.params.id) };
+    const id = req.params.id;
+    let collection = await db.collection(collectionName);
+    const query = { _id: new ObjectId(String(id)) };
+    let cat = await collection.findOne(query);
+    if (!cat) {
+      return res.status(404).json({ message: 'Cat not found' });
+    }
+    let updatedLikeCount = cat.likeCount + 1 || 0;
     const updates = {
       $set: {
-        likeCount: likeCount + 1
+        likeCount: updatedLikeCount
       },
     };
-    let collection = await db.collection(collectionName);
-    let updatedDocument = await collection.updateOne(query, updates)
-    res.json(updatedDocument);
+    await collection.updateOne(query, updates)
+    res.status(200).json({ updatedLikeCount });
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: 'Error updating document' });
