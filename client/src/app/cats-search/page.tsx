@@ -1,4 +1,5 @@
 'use client'
+import c from './CatsSearchPage.module.scss';
 import CatSmallCard from '@/components/cat-small-card/CatSmallCard';
 import { baseUrl, serverPaths } from '@/constants/api';
 import { CatType } from '@/types/CatType';
@@ -41,12 +42,11 @@ export default function CatsSearch() {
 
   return (
     <>
-      <div>Cats Search</div>
-      {cats.map((cat: CatType) => (
-          <div key={cat._id}>
-          <CatSmallCard {...cat} />
-          </div>
+      <div className={c.cardsContainer}>
+        {cats.map((cat: CatType) => (
+          <CatSmallCard key={cat._id} {...cat} />
         ))}
+      </div>
     </>
   )
 }

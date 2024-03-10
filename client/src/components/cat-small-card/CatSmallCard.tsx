@@ -37,10 +37,12 @@ export default function CatSmallCard({ _id, name, likeCount, breed, image }: Cat
     <>
       <div className={c.smallCardContainer}>
         <Image src={image} alt={name} width={300} height={300} />
-        <h2>{name}</h2>
-        <p>Breed: {breed}</p>
-        <p>Likes: {updatedLikeCount}</p>
-        <button onClick={handleLike} disabled={isLikedClicked} className={c.likeButton}>Like</button>
+        <div className={c.cardInfo}>
+          <h3>{name}</h3>
+          <p>{breed}</p>
+          <p>Likes: {updatedLikeCount}</p>
+          <button onClick={handleLike} disabled={isLikedClicked} className={c.likeButton}>Like</button>
+        </div>
       </div>
     </>
   )

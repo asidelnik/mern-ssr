@@ -1,0 +1,15 @@
+.searchContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+}
+
+.cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  grid-gap: 20px;
+  align-items: start;
+  justify-items: center;
+  padding: 60px;
+}

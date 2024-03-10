@@ -1,4 +1,5 @@
 'use client'
+import c from './HomePage.module.scss';
 import CatSmallCard from "@/components/cat-small-card/CatSmallCard";
 import { baseUrl, serverPaths } from "@/constants/api";
 import { CatType } from "@/types/CatType";
@@ -42,16 +43,18 @@ export default function Home() {
 
   return (
     <>
-      <form action={search}>
-        <input type="text" name="cat-name" placeholder="Cat name search" />
-        <button type="submit">Search</button>
-      </form>
+      <div className={c.searchContainer}>
+        <form action={search}>
+          <input type="text" name="cat-name" placeholder="Cat name search" />
+          <button type="submit">Search</button>
+        </form>
+      </div>
 
-      {cats.map((cat: CatType) => (
-        <div key={cat._id}>
-          <CatSmallCard {...cat} />
-        </div>
-      ))}
+      <div className={c.cardsContainer}>
+        {cats.map((cat: CatType) => (
+          <CatSmallCard key={cat._id} {...cat} />
+        ))}
+      </div>
     </>
   );
 }
