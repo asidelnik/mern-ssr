@@ -8,8 +8,11 @@
 - [x] - 7 - Client - fix Next.JS rendering performance - too slow - use React Suspense, build, start
 - [x] - 8 - DB - add cats (data)
 - [x] - 9 - Server - convert to typescript
-- [ ] - 10 - Client - routes structure redesign: home, search
+- [x] - 10 - Client - move search box to header
+- [x] - 11 - Client - move cat/:id route to cats-search/:id & delete cats route
 
+- [ ] - # - Client - next.js performance - check performance after scss uninstall + css using only
+- [ ] -- Move fetch/server requests from client components to server components & import them: https://stackoverflow.com/a/77509801/399527
 
 
 - [ ] - # - Make sure there are no Any types used in client or server
@@ -27,7 +30,7 @@
 - [ ] -- Redesign like button & count - facebook inspiration
 - [ ] - # - Server - check nodemon & typescript
 - [ ] - # - Add commenting to typescript
-- [ ] - # - Client - next.js performance - check performance after scss uninstall + css using only
+- [ ] - # - Client - maybe implement react-loading-skeleton
 
 
 Maybe implement express-openapi

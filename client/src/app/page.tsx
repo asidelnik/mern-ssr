@@ -3,14 +3,12 @@ import c from './HomePage.module.scss';
 import CatSmallCard from "@/components/cat-small-card/CatSmallCard";
 import { baseUrl, serverPaths } from "@/constants/api";
 import { CatType } from "@/types/CatType";
-import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function Home() {
   const [cats, setCats] = useState<CatType[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const router = useRouter();
 
   useEffect(() => {
     fetchData();
@@ -36,26 +34,23 @@ export default function Home() {
     }
   };
 
-  function search(formData: FormData) {
-    const catName = formData.get("cat-name");
-    router.push(`/cats-search?name=${catName}`);
-  }
-
   return (
     <>
-      <div className={c.searchContainer}>
-        <form action={search}>
-          <input type="text" name="cat-name" placeholder="Cat name search" />
-          <button type="submit">Search</button>
-        </form>
-      </div>
 
-      <h3 className={c.mostLikedTitle}>5 most liked cats</h3>
-      <div className={c.cardsContainer}>
-        {cats?.length > 0 && cats.map((cat: CatType) => (
-          <CatSmallCard key={cat._id} {...cat} />
-        ))}
-      </div>
+      {cats?.length > 0 && (
+        <>
+          <p>Top rated cats</p>
+          <div className={c.cardsContainer}>
+            {cats.map((cat: CatType) => (
+              <CatSmallCard key={cat._id} {...cat} />
+            ))}
+          </div>
+        </>
+      )
+      }
+
+      {isLoading && <div className="main-container-message">Loadingggg...</div>}
+      {error && <div className="main-container-message">Error getting cats</div>}
     </>
   );
 }
