@@ -8,6 +8,7 @@
 - [x] - 7 - Client - fix Next.JS rendering performance - too slow - use React Suspense, build, start
 - [x] - 8 - DB - add cats (data)
 - [x] - 9 - Server - convert to typescript
+- [ ] - 10 - Client - routes structure redesign: home, search
 
 
 
@@ -15,7 +16,6 @@
 - [ ] -- Client
 - [ ] -- Server
 
-- [ ] - # - Client - routes structure redesign: home, search
 - [ ] - # - Server - package.json - try to return "type": "module" & fix mjs build
 - [ ] - # - Client - cat page - redesign getting data (not from session)
 - [ ] - # - Client - add a spinner to every page or component
@@ -27,6 +27,7 @@
 - [ ] -- Redesign like button & count - facebook inspiration
 - [ ] - # - Server - check nodemon & typescript
 - [ ] - # - Add commenting to typescript
+- [ ] - # - Client - next.js performance - check performance after scss uninstall + css using only
 
 
 Maybe implement express-openapi

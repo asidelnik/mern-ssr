@@ -22,7 +22,7 @@ export default function Home() {
       const path = `${baseUrl}${serverPaths.mostLikedCats}`;
       const response = await fetch(path);
       const data: CatType[] = await response.json();
-      setCats(data);
+      setCats(data || []);
     } catch (err: unknown) {
       if (err instanceof TypeError) {
         // Handle fetch TypeError
@@ -52,7 +52,7 @@ export default function Home() {
 
       <h3 className={c.mostLikedTitle}>5 most liked cats</h3>
       <div className={c.cardsContainer}>
-        {cats.map((cat: CatType) => (
+        {cats?.length > 0 && cats.map((cat: CatType) => (
           <CatSmallCard key={cat._id} {...cat} />
         ))}
       </div>

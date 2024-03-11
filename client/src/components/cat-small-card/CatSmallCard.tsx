@@ -45,10 +45,10 @@ export default function CatSmallCard(props: CatType) {
 
   return (
     <>
-      <div className={c.smallCardContainer} onClick={navigateToFullCard}>
-        <Image src={image} alt={name} width={300} height={300} />
+      <div className={c.smallCardContainer}>
+        <Image src={image} alt={name} width={300} height={300} onClick={navigateToFullCard} />
         <div className={c.cardInfo}>
-          <h3>{name}</h3>
+          <h3 onClick={navigateToFullCard}>{name}</h3>
           <p>{breed}</p>
           <p>Likes: {updatedLikeCount}</p>
           <button onClick={handleLike} disabled={isLikedClicked} className={c.likeButton}>Like</button>

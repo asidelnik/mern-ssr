@@ -26,7 +26,7 @@ export default function CatsSearchSuspensed() {
       const path = `${baseUrl}${serverPaths.catSearch}?name=${name}`;
       const response = await fetch(path);
       const data: CatType[] = await response.json();
-      setCats(data);
+      setCats(data || []);
     } catch (err: unknown) {
       if (err instanceof TypeError) {
         // Handle fetch TypeError
@@ -42,7 +42,7 @@ export default function CatsSearchSuspensed() {
   return (
     <>
       <div className={c.cardsContainer}>
-        {cats.map((cat: CatType) => (
+        {cats?.length > 0 && cats.map((cat: CatType) => (
           <CatSmallCard key={cat._id} {...cat} />
         ))}
       </div>

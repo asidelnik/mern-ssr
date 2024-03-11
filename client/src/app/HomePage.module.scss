@@ -7,14 +7,15 @@
 
 .mostLikedTitle {
   text-align: center;
-  padding:0;
+  padding: 0;
 }
 
 .cardsContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 300px);
+  grid-template-columns: repeat(5, 1fr);
   grid-gap: 20px;
   align-items: start;
   justify-items: center;
+  justify-content: center;
   padding: 60px;
 }
