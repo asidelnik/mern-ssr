@@ -6,10 +6,8 @@
 - [x] - 5 - Client - like cat POST request
 - [x] - 6 - Client - UI & design - started
 - [x] - 7 - Client - fix Next.JS rendering performance - too slow - use React Suspense, build, start
-
-- [ ] - # - DB - add cats (data)
-
-- [ ] - # - Server - convert to typescript
+- [x] - 8 - DB - add cats (data)
+- [ ] - 9 - Server - convert to typescript
 - [ ] -- Add commenting to typescript
 
 
