@@ -7,22 +7,26 @@
 - [x] - 6 - Client - UI & design - started
 - [x] - 7 - Client - fix Next.JS rendering performance - too slow - use React Suspense, build, start
 - [x] - 8 - DB - add cats (data)
-- [ ] - 9 - Server - convert to typescript
-- [ ] -- Add commenting to typescript
-- [ ] -- Make sure there are no Any types used in client or server
-- [ ] --- Client
-- [ ] --- Server
+- [x] - 9 - Server - convert to typescript
 
 
 
+- [ ] - # - Make sure there are no Any types used in client or server
+- [ ] -- Client
+- [ ] -- Server
 
 - [ ] - # - Client - routes structure redesign: home, search
+- [ ] - # - Server - package.json - try to return "type": "module" & fix mjs build
 - [ ] - # - Client - cat page - redesign getting data (not from session)
+- [ ] - # - Client - add a spinner to every page or component
+
 
 - [ ] - # - Client - UI & design - finish
 - [ ] -- cat page - get profile page design
 - [ ] -- cat page - background color - lighter than cat color
 - [ ] -- Redesign like button & count - facebook inspiration
+- [ ] - # - Server - check nodemon & typescript
+- [ ] - # - Add commenting to typescript
 
 
 Maybe implement express-openapi
