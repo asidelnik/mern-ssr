@@ -39,7 +39,7 @@ export default function CatSmallCard(props: CatType) {
 
   function navigateToFullCard() {
     sessionStorage.setItem('cat-card-data', JSON.stringify(props));
-    router.push(`/cats/${_id}`);
+    router.push(`/cats-search/${_id}`);
   }
 
 

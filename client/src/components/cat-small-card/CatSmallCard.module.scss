@@ -10,16 +10,28 @@
   border-radius: 5px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+  }
   
   img {
     // object-fit: cover;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    cursor: pointer;
   }
-
+  
   .cardInfo {
     padding: 10px;
+    
+    h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #333;
+      cursor: pointer;
+    }
     
     .likeButton {
       cursor: pointer;

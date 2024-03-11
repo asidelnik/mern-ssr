@@ -1,4 +1,3 @@
-'use client'
 import c from './CatFullCard.module.scss';
 import Image from 'next/image'
 import { useEffect, useState } from 'react';
