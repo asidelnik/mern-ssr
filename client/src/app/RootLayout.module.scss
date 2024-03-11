@@ -1,22 +1,24 @@
 .body {
   padding: 0;
   margin: 0;
-     background-color: hsl(0, 0%, 98%);
+  background-color: white;
 
   .header {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    column-gap: 50px;
-    padding: 10px 20px;
-    width: 100%;
-    background-color: white;
-
-    .nav {
+    padding: 10px 50px 10px 30px;
+    background-color: hsl(0, 0%, 98%);
+    border-bottom: 1px solid hsl(0, 0%, 90%);
+    
+    .left {
       display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      column-gap: 20px;
+      align-items: baseline;
+      column-gap: 80px;
     }
+  }
+
+  .main {
+    padding: 20px 30px 20px 30px;
   }
 }
