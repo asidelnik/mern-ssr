@@ -2,14 +2,26 @@
 - [x] - 1 - Server - set routes
 - [x] - 2 - Client - Next.JS project started
 - [x] - 3 - Client - routing
-- [ ] - 4 - Client - GET data from the server (all requests)
+- [x] - 4 - Client - GET data from the server (all requests tested)
+- [x] - 5 - Client - like cat POST request
+- [x] - 6 - Client - UI & design - started
+- [x] - 7 - Client - fix Next.JS rendering performance - too slow - use React Suspense, build, start
 
-- [ ] - 5 - Server - test routes
-- [ ] - 6 - Server - convert to typescript
+- [ ] - # - DB - add cats (data)
+
+- [ ] - # - Server - convert to typescript
 - [ ] -- Add commenting to typescript
 
-- [ ] - 7 - Client - like cat POST request
-- [ ] - 8 - Client - UI & design
+
+
+- [ ] - # - Client - routes structure redesign: home, search
+- [ ] - # - Client - cat page - redesign getting data (not from session)
+
+- [ ] - # - Client - UI & design - finish
+- [ ] -- cat page - get profile page design
+- [ ] -- cat page - background color - lighter than cat color
+- [ ] -- Redesign like button & count - facebook inspiration
+
 
 Maybe implement express-openapi
 

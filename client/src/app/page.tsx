@@ -50,6 +50,7 @@ export default function Home() {
         </form>
       </div>
 
+      <h3 className={c.mostLikedTitle}>5 most liked cats</h3>
       <div className={c.cardsContainer}>
         {cats.map((cat: CatType) => (
           <CatSmallCard key={cat._id} {...cat} />
