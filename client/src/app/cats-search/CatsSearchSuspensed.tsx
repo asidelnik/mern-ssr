@@ -1,4 +1,3 @@
-'use client'
 import c from './CatsSearch.module.scss';
 import CatSmallCard from "@/components/cat-small-card/CatSmallCard";
 import { baseUrl, serverPaths } from "@/constants/api";
@@ -10,11 +9,11 @@ export default function CatsSearchSuspensed() {
   const [cats, setCats] = useState<CatType[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-
   const searchParams = useSearchParams();
   const catName = searchParams.get('name');
-  // Use catName as a query param in a get request
+
   useEffect(() => {
+    console.log('catName', catName, typeof catName);
     if (catName) {
       fetchData(catName);
     }
@@ -39,13 +38,25 @@ export default function CatsSearchSuspensed() {
       setIsLoading(false);
     }
   }
+
   return (
     <>
-      <div className={c.cardsContainer}>
-        {cats?.length > 0 && cats.map((cat: CatType) => (
-          <CatSmallCard key={cat._id} {...cat} />
-        ))}
-      </div>
+      {cats?.length > 0 && (
+        <>
+          <div>
+            <p>Searched: {catName}</p>
+            <div className={c.cardsContainer}>
+              {cats.map((cat: CatType) => (
+                <CatSmallCard key={cat._id} {...cat} />
+              ))}
+            </div>
+
+          </div>
+        </>
+      )}
+      {isLoading && <div className="main-container-message">Loadingggg...</div>}
+      {!isLoading && !catName && <div className="main-container-message">No cats searched</div>}
+      {!isLoading && catName && cats?.length == 0 && <div className="main-container-message">No cats found</div>}
     </>
   )
 }
