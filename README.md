@@ -9,6 +9,10 @@
 - [x] - 8 - DB - add cats (data)
 - [ ] - 9 - Server - convert to typescript
 - [ ] -- Add commenting to typescript
+- [ ] -- Make sure there are no Any types used in client or server
+- [ ] --- Client
+- [ ] --- Server
+
 
 
 
