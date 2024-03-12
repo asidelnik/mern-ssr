@@ -14,6 +14,10 @@
 - [x] - 13 - Client - spinner component created
 - [x] - 14 - Client - CatsSearchSuspended - converted to server component with loading, error & server fetch
 - [x] - 15 - Client - removed suspnse, moved fetch functions to separate file. Search grid component - use next.js searchParams props instead of hook.
+- [x] - 16 - Client - styling
+- [x] -- Small card - styling completed
+
+
 
 - [ ] - # - Client - next.js performance - check performance after scss uninstall + css using only
 - [ ] -- Move fetch/server requests from client components to server components & import them: https://stackoverflow.com/a/77509801/399527
