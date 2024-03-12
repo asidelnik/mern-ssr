@@ -1,13 +1,14 @@
 import c from './CatsSearch.module.scss';
 import CatSmallCard from "@/components/cat-small-card/CatSmallCard";
-import { baseUrl, serverPaths } from "@/constants/api";
+import getCatsByName from '@/data-fetching/getCatsByName';
 import { CatType } from "@/types/CatType";
 import { useSearchParams } from "next/navigation";
 
 export default async function CatsSearchSuspensed() {
   const searchParams = useSearchParams();
   const catName = searchParams.get('name');
-  const cats = await getCats<CatType[]>(catName)
+  console.log('catName', catName)
+  const cats = await getCatsByName<CatType[]>(catName)
 
   return (
     <>
@@ -27,16 +28,3 @@ export default async function CatsSearchSuspensed() {
     </>
   )
 }
-
-
-async function getCats<T>(name: string | null): Promise<T> {
-  if (name === null) {
-    throw new Error('No cat searched')
-  }
-  const path = `${baseUrl}${serverPaths.catSearch}?name=${name}`;
-  const res = await fetch(path);
-  if (!res.ok) {
-    throw new Error('Please try later')
-  }
-  return res.json() as Promise<T>;
-};
