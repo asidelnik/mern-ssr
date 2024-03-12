@@ -5,11 +5,10 @@
   "main": "server.js",
   "scripts": {
     "node": "node --env-file=config.env src/server.js",
-    "nodemon": "npx nodemon",
     "build": "rimraf ./build && tsc",
     "start": "npm run build && node --env-file=config.env build/server",
-    "ts-db-insert": "npm run build && node --env-file=config.env build/db/db-insert.js",
-    "db-insert": "node --env-file=config.env src/db/db-insert.js"
+    "db-insert": "node --env-file=config.env src/db/db-insert.js",
+    "nodemon--fix-this-script-for-typescript": "npx nodemon"
   },
   "keywords": [],
   "author": "",
