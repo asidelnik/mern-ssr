@@ -10,9 +10,14 @@
 - [x] - 9 - Server - convert to typescript
 - [x] - 10 - Client - move search box to header
 - [x] - 11 - Client - move cat/:id route to cats-search/:id & delete cats route
+- [x] - 12 - Client - home page - converted to server component. Replaced state with next.js loading & error handling & server fetch function 
 
 - [ ] - # - Client - next.js performance - check performance after scss uninstall + css using only
 - [ ] -- Move fetch/server requests from client components to server components & import them: https://stackoverflow.com/a/77509801/399527
+
+- [ ] - # - Client - data fetching Next.js - update typescript package version
+To use async/await in a Server Component with TypeScript, you'll need to use TypeScript 5.1.3 or higher and @types/react 18.2.8 or higher.
+
 
 
 - [ ] - # - Make sure there are no Any types used in client or server
