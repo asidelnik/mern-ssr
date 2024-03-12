@@ -20,6 +20,7 @@
     &.active {
       color: hsl(0, 0%, 10%);
       background-color: hsl(0, 0%, 92%);
+      pointer-events: none;
     }
   }
 }
