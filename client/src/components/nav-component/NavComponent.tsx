@@ -14,7 +14,7 @@ export default function NavComponent() {
         <Link className={pathFirstString === '/' ? c.link + ' ' + c.active : c.link} href="/">
           Top rated
         </Link>
-        <Link className={pathFirstString === '/cats-search' ? c.link + ' ' + c.active : c.link} href={pathFirstString === '/cats-search' ? "" : "/cats-search"}>
+        <Link className={pathFirstString === '/cats-search' ? `${c.link} ${c.notClickable} ${c.active}` : `${c.link} ${c.notClickable}`} href=''>
           Search
         </Link>
       </nav>

@@ -22,5 +22,15 @@
       background-color: hsl(0, 0%, 92%);
       pointer-events: none;
     }
+    
+    &.notClickable {
+      pointer-events: none;
+      cursor: default;
+
+      &:hover {
+        color: #333;
+        background-color: transparent;
+      }
+    }
   }
 }
