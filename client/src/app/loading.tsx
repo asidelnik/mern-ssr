@@ -1,3 +1,7 @@
+import Spinner from "@/components/spinner/Spinner";
+
 export default function Loading() {
-  return <div className="main-container-message">Loading...</div>
+  return (
+    <Spinner />
+  );
 }
