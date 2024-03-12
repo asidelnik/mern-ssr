@@ -11,8 +11,8 @@ export default async function CatsSearchComp({ catName }: CatsSearchCompProps) {
     <>
       {catName !== null && cats?.length > 0 && (
         <>
-          <div>
-            <p>Searched: {catName || ""}</p>
+          <div className={c.container}>
+            <p>Searched: <span className={c.searchedValue}>{catName || ""}</span></p>
             <div className={c.cardsContainer}>
               {cats.map((cat: CatType) => (
                 <CatSmallCard key={cat._id} {...cat} />

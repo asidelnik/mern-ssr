@@ -1,8 +1,3 @@
-.mostLikedTitle {
-  text-align: center;
-  padding: 0;
-}
-
 .cardsContainer {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -10,5 +5,5 @@
   align-items: start;
   justify-items: center;
   justify-content: center;
-  padding: 20px 0px 0px;
+  padding: 100px 30px 60px 30px;
 }

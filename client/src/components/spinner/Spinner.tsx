@@ -9,7 +9,7 @@ export default function Spinner() {
 
     }}>
       <div style={{
-        border: '8px solid #f3f3f3',
+        border: '8px solid hsl(0, 0%, 86%)',
         borderRadius: '50%',
         borderTop: '8px solid hsl(212, 100%, 48%)',
         width: '80px',

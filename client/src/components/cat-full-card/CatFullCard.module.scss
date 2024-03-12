@@ -3,17 +3,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 1024px;
-  // height: 100%;
   padding: 60px;
-  border: 1px solid #e0e0e0;
-  border-radius: 5px;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  // background-color: hsl(39 100% 90% / 1);
   
   img {
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-radius: 50%;
   }
 
   .cardInfo {
