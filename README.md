@@ -16,7 +16,8 @@
 - [x] - 15 - Client - removed suspnse, moved fetch functions to separate file. Search grid component - use next.js searchParams props instead of hook.
 - [x] - 16 - Client - styling
 - [x] -- Small card - styling completed
-
+- [x] - 17 - Client - removed cats data fetch caching to enable like PUT request to update like count even after refresh.
+- [ ] - 18 - Client - cat page - styling
 
 
 - [ ] - # - Client - next.js performance - check performance after scss uninstall + css using only
