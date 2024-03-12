@@ -1,13 +1,10 @@
 import c from './CatsSearch.module.scss';
 import CatSmallCard from "@/components/cat-small-card/CatSmallCard";
-import getCatsByName from '@/data-fetching/getCatsByName';
 import { CatType } from "@/types/CatType";
-import { useSearchParams } from "next/navigation";
+import { CatsSearchCompProps } from '@/types/CatsSearchSuspensedProps';
+import { getCatsByName } from '@/data-fetching/functions';
 
-export default async function CatsSearchSuspensed() {
-  const searchParams = useSearchParams();
-  const catName = searchParams.get('name');
-  console.log('catName', catName)
+export default async function CatsSearchComp({ catName }: CatsSearchCompProps) {
   const cats = await getCatsByName<CatType[]>(catName)
 
   return (
@@ -15,7 +12,7 @@ export default async function CatsSearchSuspensed() {
       {catName !== null && cats?.length > 0 && (
         <>
           <div>
-            <p>Searched: {catName}</p>
+            <p>Searched: {catName || ""}</p>
             <div className={c.cardsContainer}>
               {cats.map((cat: CatType) => (
                 <CatSmallCard key={cat._id} {...cat} />
