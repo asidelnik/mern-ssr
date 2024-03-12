@@ -10,7 +10,6 @@ export default async function Home() {
     <>
       {cats?.length > 0 && (
         <>
-          <p>Top rated cats</p>
           <div className={c.cardsContainer}>
             {cats.map((cat: CatType) => (
               <CatSmallCard key={cat._id} {...cat} />
