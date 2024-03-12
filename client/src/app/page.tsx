@@ -32,7 +32,7 @@ async function getCats<T>(): Promise<T> {
   const path = `${baseUrl}${serverPaths.mostLikedCats}`;
   const res = await fetch(path);
   if (!res.ok) {
-    throw new Error('Failed to fetch data')
+    throw new Error('Please try later')
   }
   return res.json() as Promise<T>;
 };

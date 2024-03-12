@@ -12,6 +12,7 @@
 - [x] - 11 - Client - move cat/:id route to cats-search/:id & delete cats route
 - [x] - 12 - Client - home page - converted to server component. Replaced state with next.js loading & error handling & server fetch function 
 - [x] - 13 - Client - spinner component created
+- [x] - 14 - Client - CatsSearchSuspended - converted to server component with loading, error & server fetch
 
 - [ ] - # - Client - next.js performance - check performance after scss uninstall + css using only
 - [ ] -- Move fetch/server requests from client components to server components & import them: https://stackoverflow.com/a/77509801/399527

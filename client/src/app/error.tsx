@@ -1,21 +1,11 @@
 'use client'
-import { useEffect } from 'react'
+import { ErrorPageProps } from '@/types/ErrorPageProps'
 
-export default function Error({
-  error,
-  reset,
-}: {
-  error: Error & { digest?: string }
-  reset: () => void
-}) {
-  useEffect(() => {
-    console.error(error)
-  }, [error])
-
+export default function Error({ error, reset, }: ErrorPageProps) {
   return (
     <div className='main-container-message'>
-      <h2>Something went wrong!</h2>
-      <button className={'button-base button-primary'}
+      <h2>{error?.message || 'Something went wrong!'}</h2>
+      <button className='button-base button-primary'
         onClick={
           () => reset()
         }
