@@ -14,7 +14,8 @@
 ![image](https://github.com/asidelnik/pet-website/assets/10272524/7f3f4b83-6f6b-4372-b952-4eb1c4d1236e)
 
 ## Liking a cat
-![image](https://github.com/asidelnik/pet-website/assets/10272524/c0c20b4d-4f8c-41f2-abfc-f9bd515d28d9)
+![image](https://github.com/asidelnik/pet-website/assets/10272524/9eed22f9-5f12-4158-89c2-e3f29d858fd6)
+
 
 ## Cat profile page
 ![image](https://github.com/asidelnik/pet-website/assets/10272524/aa7df534-1c71-4595-8517-ba1eb790cb55)
