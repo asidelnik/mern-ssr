@@ -50,23 +50,3 @@
 ## Cat data
 ### Images
 https://en.wikipedia.org/wiki/List_of_cat_breeds
-### Names
-Buttercup
-Bubbles
-Blossom
-Sandy Cheeks
-Pearl
-Mrs. Puff
-Trixie
-Vicky
-Wanda
-Marge
-Lisa
-Lois
-Meg
-Muriel
-Velma
-Daphne
-Louise
-Tina
-Linda
