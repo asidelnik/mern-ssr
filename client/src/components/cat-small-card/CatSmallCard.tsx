@@ -1,19 +1,16 @@
-'use client'
+'use client';
 import c from './CatSmallCard.module.scss';
 import Image from 'next/image'
 import { CatType } from "@/types/CatType";
-import { baseUrl, serverPaths } from '@/constants/api';
 import { useState } from 'react';
 import { UpdatedLikeCount } from '@/types/UpdatedLikeCount';
 import { useRouter } from "next/navigation";
+import { likeCat } from '@/data-fetching/functions';
+// Icons
 import { IoMdHeartEmpty } from "react-icons/io";
 import { IoMdHeart } from "react-icons/io";
 import { LiaBirthdayCakeSolid } from "react-icons/lia";
 import { TbWeight } from "react-icons/tb";
-import { revalidateTag } from 'next/cache';
-import { likeCat } from '@/data-fetching/functions';
-// import { PiCat } from "react-icons/pi";
-// import { CiLocationOn } from "react-icons/ci";
 
 export default function CatSmallCard(props: CatType) {
   const { _id, name, likeCount, breed, image, age, weightG } = props;
