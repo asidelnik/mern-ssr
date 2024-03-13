@@ -21,6 +21,7 @@
 - [x] - 19 - Client - top rated - flex layout
 - [x] - 20 - Client - cat page - styling
 - [x] - 21 - Client - mobile layout
+- [ ] - 22 - Client - like button - show like count update faster
 
 - [ ] - # - Maybe implement express-openapi & skeleton loader
 
