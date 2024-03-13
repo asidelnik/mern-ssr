@@ -10,11 +10,18 @@
     padding: 10px 50px 10px 30px;
     border-bottom: 1px solid hsl(0, 0%, 87%);
     height: 90px;
-    
+
     .left {
       display: flex;
       align-items: baseline;
       column-gap: 80px;
+    }
+
+    .right {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      column-gap: 15px;
     }
   }
 
