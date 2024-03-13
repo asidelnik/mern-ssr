@@ -1,4 +1,4 @@
-import CatSmallCard from "@/components/cat-small-card/CatSmallCard"
+import CatFullCard from "@/components/cat-full-card/CatFullCard";
 import { getCatById } from "@/data-fetching/functions";
 import { CatType } from "@/types/CatType";
 import { ParamsProps } from "@/types/ParamsProps";
@@ -8,7 +8,7 @@ export default async function CatPage({ params }: ParamsProps) {
 
   return (
     <>
-      <CatSmallCard {...catData} />
+      <CatFullCard {...catData} />
     </>
   )
 }
