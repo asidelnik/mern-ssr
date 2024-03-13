@@ -1,21 +1,22 @@
 'use client'
-import c from "./SearchComponent.module.scss";
+import c from "./SearchForm.module.scss";
 import { useRouter } from "next/navigation";
 import { MdSearch } from "react-icons/md";
 
-export default function SearchComponent() {
+export default function SearchForm() {
   const router = useRouter();
 
-  function search(formData: FormData) {
+  function searchHandler(formData: FormData) {
     const catName = formData.get("cat-name");
-    router.push(`/cats-search?name=${catName}`);
+    router.push(`/search?name=${catName}`);
   }
+
   return (
     <>
       <div className={c.searchContainer}>
-        <form action={search}>
+        <form action={searchHandler}>
           <input type="text" name="cat-name" placeholder="Name search" />
-          <button type="submit" className="button-base button-primary">
+          <button type="submit" className="button-base button-primary show-on-desktop">
             <MdSearch />
           </button>
         </form>

@@ -1,10 +1,10 @@
-import c from './CatsSearch.module.scss';
+import c from './SearchResults.module.scss';
 import CatSmallCard from "@/components/cat-small-card/CatSmallCard";
 import { CatType } from "@/types/CatType";
-import { CatsSearchCompProps } from '@/types/CatsSearchSuspensedProps';
+import { CatsSearchCompProps } from '@/types/CatsSearchCompProps';
 import { getCatsByName } from '@/data-fetching/functions';
 
-export default async function CatsSearchComp({ catName }: CatsSearchCompProps) {
+export default async function SearchResults({ catName }: CatsSearchCompProps) {
   const cats = await getCatsByName<CatType[]>(catName)
 
   return (
