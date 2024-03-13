@@ -54,14 +54,13 @@ catsRouter.get('/:id', async (_req: Request, res: Response) => {
     if (!collections.cats) {
       res.status(500).json({ message: 'Error fetching data' });
     } else {
-      let query = { _id: new ObjectId(_req.params.id) };
-      let result = (await collections.cats.findOne(query)) as CatModel;
-
-      if (!result) {
-        res.send(`Cat not found by id ${_req.params.id}`).status(404);
-      } else {
-        res.send(result).status(200);
+      const id = _req.params.id;
+      const query = { _id: new ObjectId(String(id)) };
+      let cat = (await collections.cats.findOne(query)) as CatModel;
+      if (!cat) {
+        return res.status(404).json({ message: 'Cat not found' });
       }
+      res.status(200).json(cat);
     }
   } catch (err) {
     console.error(err);
