@@ -11,6 +11,7 @@ import { IoMdHeart } from "react-icons/io";
 import { LiaBirthdayCakeSolid } from "react-icons/lia";
 import { TbWeight } from "react-icons/tb";
 import { revalidateTag } from 'next/cache';
+import { likeCat } from '@/data-fetching/functions';
 // import { PiCat } from "react-icons/pi";
 // import { CiLocationOn } from "react-icons/ci";
 
@@ -28,9 +29,7 @@ export default function CatSmallCard(props: CatType) {
     setIsLoading(true);
     setIsLikedClicked(true);
     try {
-      const path = `${baseUrl}${serverPaths.likeCat}/${_id}`;
-      const response = await fetch(path, { method: 'PUT' });
-      const { updatedLikeCount }: UpdatedLikeCount = await response.json();
+      const { updatedLikeCount }: UpdatedLikeCount = await likeCat(_id)
       setUpdatedLikeCount(updatedLikeCount);
     } catch (err: unknown) {
       if (err instanceof TypeError) {
@@ -47,8 +46,7 @@ export default function CatSmallCard(props: CatType) {
   };
 
   function navigateToFullCard() {
-    sessionStorage.setItem('cat-card-data', JSON.stringify(props));
-    router.push(`/cats-search/${_id}`);
+    router.push(`/cats/${_id}`);
   }
 
   return (
