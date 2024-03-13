@@ -1,3 +1,28 @@
+# Pet Website
+## Stack
+- Node.JS
+- Express.JS
+- Typescript
+- MongoDB + Atlas
+- Next.JS
+- React
+
+## Top rated cats - home page
+![image](https://github.com/asidelnik/pet-website/assets/10272524/d4e0a3d6-f162-410c-aef9-f6e70fa26613)
+
+## Search cats page
+![image](https://github.com/asidelnik/pet-website/assets/10272524/7f3f4b83-6f6b-4372-b952-4eb1c4d1236e)
+
+## Liking a cat
+![image](https://github.com/asidelnik/pet-website/assets/10272524/c0c20b4d-4f8c-41f2-abfc-f9bd515d28d9)
+
+## Cat profile page
+![image](https://github.com/asidelnik/pet-website/assets/10272524/aa7df534-1c71-4595-8517-ba1eb790cb55)
+
+## Mobile view of profile page
+![image](https://github.com/asidelnik/pet-website/assets/10272524/f9e50331-7e7f-4565-87a1-19df11c82311)
+
+
 ## Tasks
 - [x] - 1 - Server - set routes
 - [x] - 2 - Client - Next.JS project started
