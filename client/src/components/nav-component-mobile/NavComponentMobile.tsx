@@ -1,9 +1,9 @@
 'use client'
-import c from "./NavComponent.module.scss";
+import c from "./NavComponentMobile.module.scss";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default function NavComponent() {
+export default function NavComponentMobile() {
   const pathname = usePathname()
   const pathParts = pathname.split('/');
   const pathFirstString = pathParts.length > 1 ? '/' + pathParts[1] : '/';

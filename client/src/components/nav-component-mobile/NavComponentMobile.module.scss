@@ -1,12 +1,18 @@
 .nav {
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   column-gap: 30px;
-
-  @media screen and (max-width: 940px){
-    display: none;
-  }
+  position: fixed;
+  top: 90px;
+  right: 0;
+  z-index: 100;
+  border-left: 1px solid hsl(0, 0%, 87%);
+  background-color: hsl(0, 0%, 97%);
+  padding: 40px 50px;
+  row-gap: 30px;
+  height: calc(100vh - 90px);
 
   a.link {
     color: hsl(0, 0%, 30%);
@@ -15,18 +21,18 @@
     transition: color 0.3s ease;
     padding: 10px 20px;
     border-radius: 5px;
-    
+
     &:hover {
       color: hsl(0, 0%, 5%);
       background-color: hsl(0, 0%, 92%);
     }
-    
+
     &.active {
       color: hsl(0, 0%, 5%);
       background-color: hsl(0, 0%, 92%);
       pointer-events: none;
     }
-    
+
     &.notClickable {
       pointer-events: none;
       cursor: default;
