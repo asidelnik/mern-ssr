@@ -1,13 +1,11 @@
 import { Collection, Db, MongoClient } from 'mongodb';
 
 const uri = process.env.ATLAS_URI || '';
-console.log(uri)
 const client = new MongoClient(uri);
 
 async function run() {
   try {
     // Connect to the Atlas cluster
-    console.log(client)
     await client.connect();
 
     // Get the database and collection on which to run the operation

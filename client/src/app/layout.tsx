@@ -29,7 +29,7 @@ export default function RootLayout({
           </div>
           <SearchComponent />
         </header>
-        <main>
+        <main className={c.main}>
           {children}
         </main>
       </body>
