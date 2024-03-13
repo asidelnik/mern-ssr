@@ -17,11 +17,10 @@ import { likeCat } from '@/data-fetching/functions';
 
 export default function CatSmallCard(props: CatType) {
   const { _id, name, likeCount, breed, image, age, weightG } = props;
-  console.log({ likeCount })
   const [isLikedClicked, setIsLikedClicked] = useState<boolean>(false);
   const [updatedLikeCount2, setUpdatedLikeCount] = useState<number>(likeCount);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [isError, setIsError] = useState<boolean>(false);
   const router = useRouter();
   const weightKg = (weightG / 1000).toFixed(1);
 
@@ -31,15 +30,9 @@ export default function CatSmallCard(props: CatType) {
     try {
       const { updatedLikeCount }: UpdatedLikeCount = await likeCat(_id)
       setUpdatedLikeCount(updatedLikeCount);
+      setIsError(false);
     } catch (err: unknown) {
-      if (err instanceof TypeError) {
-        // Handle fetch TypeError
-        setError((err as TypeError).message);
-      } else {
-        // Handle generic errors
-        setError((err as Error).message);
-      }
-      setIsLikedClicked(false);
+      setIsError(true);
     } finally {
       setIsLoading(false);
     }
@@ -62,10 +55,13 @@ export default function CatSmallCard(props: CatType) {
             <div className={c.likeAgeWeight}>
               <div className={c.likes}>
                 <button onClick={handleLike} disabled={isLikedClicked} className={c.likeButton}>
-                  {isLikedClicked ? <IoMdHeart className={c.red} /> : <IoMdHeartEmpty className={c.icon + ' ' + c.iconHover} />}
+                  {isLikedClicked ?
+                    isError ? <IoMdHeart className={c.gray} /> : <IoMdHeart className={c.red} /> :
+                    <IoMdHeartEmpty className={c.icon + ' ' + c.iconHover} />}
                 </button>
                 <p>{updatedLikeCount2}</p>
               </div>
+
               <div className={c.age}>
                 <LiaBirthdayCakeSolid className={c.icon} />
                 <p>{age}</p>
