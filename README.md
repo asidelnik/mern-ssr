@@ -17,7 +17,10 @@
 - [x] - 16 - Client - styling
 - [x] -- Small card - styling completed
 - [x] - 17 - Client - removed cats data fetch caching to enable like PUT request to update like count even after refresh.
-- [ ] - 18 - Client - cat page - styling
+- [x] - 18 - Client - cat page - get data with fetch by id instead of session storage
+- [ ] - 19 - Client - top rated - flex layout
+- [ ] - 20 - Client - cat page - styling
+- [ ] - 21 - Client - mobile layout
 
 
 - [ ] - # - Client - next.js performance - check performance after scss uninstall + css using only

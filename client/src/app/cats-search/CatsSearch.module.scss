@@ -15,5 +15,10 @@
     justify-items: center;
     justify-content: center;
     padding: 15px 10px 0px 10px;
+
+    @media screen and (min-width: 600px) {
+      grid-template-columns: repeat(1, 1fr);
+      row-gap: 35px;
+    }
   }
 }

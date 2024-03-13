@@ -1,9 +1,13 @@
 .cardsContainer {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
   align-items: start;
-  justify-items: center;
   justify-content: center;
-  padding: 100px 30px 60px 30px;
+  padding: 80px 30px 60px;
+
+  @media screen and (min-width: 600px) {
+    padding: 50px 20px;
+  }
 }
