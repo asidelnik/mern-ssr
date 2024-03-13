@@ -7,8 +7,7 @@
     "node": "node --env-file=config.env src/server.js",
     "build": "rimraf ./build && tsc",
     "start": "npm run build && node --env-file=config.env build/server",
-    "db-insert": "node --env-file=config.env src/db/db-insert.js",
-    "nodemon--fix-this-script-for-typescript": "npx nodemon"
+    "db-insert": "node --env-file=config.env src/db/db-insert.js"
   },
   "keywords": [],
   "author": "",
