@@ -18,38 +18,11 @@
 - [x] -- Small card - styling completed
 - [x] - 17 - Client - removed cats data fetch caching to enable like PUT request to update like count even after refresh.
 - [x] - 18 - Client - cat page - get data with fetch by id instead of session storage
-- [ ] - 19 - Client - top rated - flex layout
-- [ ] - 20 - Client - cat page - styling
-- [ ] - 21 - Client - mobile layout
+- [x] - 19 - Client - top rated - flex layout
+- [x] - 20 - Client - cat page - styling
+- [x] - 21 - Client - mobile layout
 
-
-- [ ] - # - Client - next.js performance - check performance after scss uninstall + css using only
-- [ ] -- Move fetch/server requests from client components to server components & import them: https://stackoverflow.com/a/77509801/399527
-
-- [ ] - # - Client - data fetching Next.js - update typescript package version
-To use async/await in a Server Component with TypeScript, you'll need to use TypeScript 5.1.3 or higher and @types/react 18.2.8 or higher.
-
-
-
-- [ ] - # - Make sure there are no Any types used in client or server
-- [ ] -- Client
-- [ ] -- Server
-
-- [ ] - # - Server - package.json - try to return "type": "module" & fix mjs build
-- [ ] - # - Client - cat page - redesign getting data (not from session)
-- [ ] - # - Client - add a spinner to every page or component
-
-
-- [ ] - # - Client - UI & design - finish
-- [ ] -- cat page - get profile page design
-- [ ] -- cat page - background color - lighter than cat color
-- [ ] -- Redesign like button & count - facebook inspiration
-- [ ] - # - Server - check nodemon & typescript
-- [ ] - # - Add commenting to typescript
-- [ ] - # - Client - maybe implement react-loading-skeleton
-
-
-Maybe implement express-openapi
+- [ ] - # - Maybe implement express-openapi & skeleton loader
 
 ## Cat type
 ```
