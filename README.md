@@ -7,6 +7,7 @@
 - Next.JS
 - React
 
+
 ## Top rated cats - home page
 ![image](https://github.com/asidelnik/pet-website/assets/10272524/d4e0a3d6-f162-410c-aef9-f6e70fa26613)
 
@@ -15,7 +16,6 @@
 
 ## Liking a cat
 ![image](https://github.com/asidelnik/pet-website/assets/10272524/9eed22f9-5f12-4158-89c2-e3f29d858fd6)
-
 
 ## Cat profile page
 ![image](https://github.com/asidelnik/pet-website/assets/10272524/aa7df534-1c71-4595-8517-ba1eb790cb55)
@@ -50,6 +50,7 @@
 - [ ] - 22 - Client - like button - show like count update faster
 
 - [ ] - # - Maybe implement express-openapi & skeleton loader
+
 
 ## Cat type
 ```
