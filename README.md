@@ -48,8 +48,9 @@
 - [x] - 20 - Client - cat page - styling
 - [x] - 21 - Client - mobile layout
 ## Future tasks  
-- [ ] - # - Mongo queries for small card cat data - add projection document to fetch only required fields for UI
-- [ ] - # - Search by name page - add filter, sort & paginate to server & client
+- [ ] - # - Mongo projection - GET queries for usage in small card UI - should get only required fields
+- [ ] - # - Client - dynamic sort & pagination - all GET requests should send filter, sort & pagination (skip & limit) data from the UI
+- [ ] - # - Mongo Index - add index on the cats collection name field - for faster querying of search cats by name
 - [ ] - # - Client - like button - show like count update faster
 - [ ] - # - Next.js - try turbo for quicker running: "dev": "next dev --turbo",
 - [ ] - # - Maybe implement express-openapi & skeleton loader
