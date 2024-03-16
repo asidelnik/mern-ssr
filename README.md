@@ -39,7 +39,7 @@
 - [x] - 12 - Client - home page - converted to server component. Replaced state with next.js loading & error handling & server fetch function 
 - [x] - 13 - Client - spinner component created
 - [x] - 14 - Client - CatsSearchSuspended - converted to server component with loading, error & server fetch
-- [x] - 15 - Client - removed suspnse, moved fetch functions to separate file. Search grid component - use next.js searchParams props instead of hook.
+- [x] - 15 - Client - removed suspense, moved fetch functions to separate file. Search grid component - use next.js searchParams props instead of hook.
 - [x] - 16 - Client - styling
 - [x] -- Small card - styling completed
 - [x] - 17 - Client - removed cats data fetch caching to enable like PUT request to update like count even after refresh.
@@ -48,9 +48,11 @@
 - [x] - 20 - Client - cat page - styling
 - [x] - 21 - Client - mobile layout
 ## Future tasks  
+- [ ] - Comment the code
 - [ ] - # - Mongo projection - GET queries for usage in small card UI - should get only required fields
 - [ ] - # - Client - dynamic sort & pagination - all GET requests should send filter, sort & pagination (skip & limit) data from the UI
 - [ ] - # - Mongo Index - add index on the cats collection name field - for faster querying of search cats by name
+- [ ] - # - Client - replace no-cache from GET requests with Next.js revalidation when likeCat PUT request sent.
 - [ ] - # - Client - like button - show like count update faster
 - [ ] - # - Next.js - try turbo for quicker running: "dev": "next dev --turbo",
 - [ ] - # - Maybe implement express-openapi & skeleton loader
