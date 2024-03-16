@@ -47,8 +47,11 @@
 - [x] - 19 - Client - top rated - flex layout
 - [x] - 20 - Client - cat page - styling
 - [x] - 21 - Client - mobile layout
-- [ ] - 22 - Client - like button - show like count update faster
-
+## Future tasks  
+- [ ] - # - Mongo queries for small card cat data - add projection document to fetch only required fields for UI
+- [ ] - # - Search by name page - add filter, sort & paginate to server & client
+- [ ] - # - Client - like button - show like count update faster
+- [ ] - # - Next.js - try turbo for quicker running: "dev": "next dev --turbo",
 - [ ] - # - Maybe implement express-openapi & skeleton loader
 
 
