@@ -54,8 +54,12 @@
 - [ ] - # - Mongo Index - add index on the cats collection name field - for faster querying of search cats by name
 - [ ] - # - Client - replace no-cache from GET requests with Next.js revalidation when likeCat PUT request sent.
 - [ ] - # - Client - like button - show like count update faster
-- [ ] - # - Next.js - try turbo for quicker running: "dev": "next dev --turbo",
-- [ ] - # - Maybe implement express-openapi & skeleton loader
+- [ ] - # - FID - First Input Delay - must be improved
+- [ ] -- Next.js - try turbo for quicker running: "dev": "next dev --turbo",
+- [ ] -- Check TBT (Total Blocking Time)
+- [ ] -- Lazy loading - next dynamic imports
+- [ ] -- Next.js - Bundle analyzer
+- [ ] - # - Maybe implement express-openapi, next streaming server components, skeleton loader
 
 
 ## Cat type
