@@ -60,7 +60,7 @@
 - [ ] -- Check TBT (Total Blocking Time)
 - [ ] -- Lazy loading - next dynamic imports
 - [ ] -- Next.js - Bundle analyzer
-- [ ] - # - Maybe implement express-openapi, next streaming server components, skeleton loader
+- [ ] - # - Maybe implement express-openapi, next streaming server components, skeleton loader, close mongo client
 
 
 ## Cat type
