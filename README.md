@@ -52,6 +52,7 @@
 - [ ] - # - Mongo projection - GET queries for usage in small card UI - should get only required fields
 - [ ] - # - Client - dynamic sort & pagination - all GET requests should send filter, sort & pagination (skip & limit) data from the UI
 - [ ] - # - Mongo Index - add index on the cats collection name field - for faster querying of search cats by name
+- [ ] -- Might require Atlas nGram for substring indexing
 - [ ] - # - Client - replace no-cache from GET requests with Next.js revalidation when likeCat PUT request sent.
 - [ ] - # - Client - like button - show like count update faster
 - [ ] - # - FID - First Input Delay - must be improved
