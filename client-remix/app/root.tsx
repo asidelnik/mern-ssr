@@ -7,6 +7,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useRouteError,
 } from "@remix-run/react";
 import MainHeader from "./components/main-header/MainHeader";
 import globalStyles from "./styles/global.css";
@@ -37,4 +38,24 @@ export default function App() {
   );
 }
 
+export function ErrorBoundary() {
+  const error = useRouteError() as Error | null;
+  console.error(error);
+  return (
+    <html lang="en">
+      <head>
+        <title>Oh no!</title>
+        <Meta />
+        <Links />
+      </head>
+      <body>
+        <div className="main-container-message">
+          <h1>Oh no!</h1>
+          <p>{error?.message}</p>
+        </div>
+        <Scripts />
+      </body>
+    </html>
+  );
+}
 
