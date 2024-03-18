@@ -1,6 +1,6 @@
 import NavComponent from '../nav-component/NavComponent'
 import NavHabmurger from '../nav-hamburger/NavHamburger'
-// import SearchForm from '../search-form/SearchForm'
+import SearchForm from '../search-form/SearchForm'
 import c from './MainHeader.module.css'
 export default function MainHeader() {
   return (
@@ -11,7 +11,7 @@ export default function MainHeader() {
           <NavComponent />
         </div>
         <div className={c.right}>
-          {/* <SearchForm /> */}
+          <SearchForm />
           <div className="show-on-mobile">
             <NavHabmurger />
           </div>
