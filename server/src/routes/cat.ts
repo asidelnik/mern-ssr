@@ -3,12 +3,10 @@ import { ObjectId } from 'mongodb';
 import { collections } from '../services/database.service';
 import CatModel from '../models/cat';
 
-// router is an instance of the express router.
-// We use it to define our routes.
-// The router will be added as a middleware and will take control of requests starting with path /cats.
+// Create an instance of the express router.
 const catsRouter = express.Router();
 
-// GET - most liked
+// GET - most liked cats
 catsRouter.get('/most-liked', async (_req: Request, res: Response) => {
   try {
     if (!collections.cats) {
@@ -68,6 +66,7 @@ catsRouter.get('/:id', async (_req: Request, res: Response) => {
   }
 });
 
+// PUT - add a like to a cat
 catsRouter.put('/add-like/:id', async (_req: Request, res: Response) => {
   try {
     if (!collections.cats) {

@@ -11,6 +11,7 @@ app.use(express.json());
 
 connectToDatabase()
   .then(() => {
+    // Add the catsRouter as a middleware to the app for path /cats
     app.use('/cats', catsRouter);
 
     app.listen(PORT, () => {
