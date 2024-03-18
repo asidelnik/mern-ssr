@@ -4,10 +4,9 @@ import { collections } from '../services/database.service';
 import CatModel from '../models/cat';
 
 // Create an instance of the express router.
-const catsRouter = express.Router();
-
+const catsRouterV2 = express.Router();
 // GET - most liked cats
-catsRouter.get('/most-liked', async (_req: Request, res: Response) => {
+catsRouterV2.get('/top-rated', async (_req: Request, res: Response) => {
   try {
     if (!collections.cats) {
       res.status(500).json({ message: 'Error fetching data' });
@@ -26,7 +25,7 @@ catsRouter.get('/most-liked', async (_req: Request, res: Response) => {
 });
 
 // GET - cats filtered by name
-catsRouter.get('/search', async (_req: Request, res: Response) => {
+catsRouterV2.get('/search', async (_req: Request, res: Response) => {
   try {
     if (!collections.cats) {
       res.status(500).json({ message: 'Error fetching data - collections' });
@@ -47,7 +46,7 @@ catsRouter.get('/search', async (_req: Request, res: Response) => {
 });
 
 // GET - cat by id
-catsRouter.get('/:id', async (_req: Request, res: Response) => {
+catsRouterV2.get('/:id', async (_req: Request, res: Response) => {
   try {
     if (!collections.cats) {
       res.status(500).json({ message: 'Error fetching data' });
@@ -67,7 +66,7 @@ catsRouter.get('/:id', async (_req: Request, res: Response) => {
 });
 
 // PUT - add a like to a cat
-catsRouter.put('/add-like/:id', async (_req: Request, res: Response) => {
+catsRouterV2.put('/add-like/:id', async (_req: Request, res: Response) => {
   try {
     if (!collections.cats) {
       res.status(500).json({ message: 'Error fetching data' });
@@ -93,8 +92,8 @@ catsRouter.put('/add-like/:id', async (_req: Request, res: Response) => {
   }
 });
 
-catsRouter.get('*', (_req: Request, res: Response) => {
+catsRouterV2.get('*', (_req: Request, res: Response) => {
   res.status(404).json({ message: 'Cat resource not found' });
 });
 
-export default catsRouter;
+export default catsRouterV2;
