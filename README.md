@@ -48,7 +48,8 @@
 - [x] - 20 - Client - cat page - styling
 - [x] - 21 - Client - mobile layout
 ## Future tasks  
-- [ ] - Comment the code
+- [x] - 22 - Comment the code
+- [ ] - # - MongoDB - update cats' image urls to smaller images. Currently getting large images.
 - [ ] - # - Mongo projection - GET queries for usage in small card UI - should get only required fields
 - [ ] - # - Client - dynamic sort & pagination - all GET requests should send filter, sort & pagination (skip & limit) data from the UI
 - [ ] - # - Mongo Index - add index on the cats collection name field - for faster querying of search cats by name
