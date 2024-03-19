@@ -3,22 +3,20 @@ import c from './CatSmallCard.module.css';
 import { useState } from 'react';
 import { likeCat } from '~/requests/requests';
 import { UpdatedLikeCount } from '~/types/UpdatedLikeCount';
+import { CatSmallCardProps } from '~/types/CatSmallCardProps';
 // Icons
 import { IoMdHeartEmpty, IoMdHeart } from "react-icons/io";
 import { LiaBirthdayCakeSolid } from "react-icons/lia";
 import { TbWeight } from "react-icons/tb";
-import { CatSmallCardProps } from '~/types/CatSmallCardProps';
 
 export default function CatSmallCard(props: CatSmallCardProps) {
   const { _id, name, likeCount, breed, image, age, weightG, loading } = props;
   const [isLikedClicked, setIsLikedClicked] = useState<boolean>(false);
   const [updatedLikeCount2, setUpdatedLikeCount] = useState<number>(likeCount);
-  const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState<boolean>(false);
   const weightKg = (weightG / 1000).toFixed(1);
 
   const handleLike = async () => {
-    setIsLoading(true);
     setIsLikedClicked(true);
     try {
       const { updatedLikeCount }: UpdatedLikeCount = await likeCat(_id)
@@ -26,8 +24,6 @@ export default function CatSmallCard(props: CatSmallCardProps) {
       setIsError(false);
     } catch (err: unknown) {
       setIsError(true);
-    } finally {
-      setIsLoading(false);
     }
   };
 
