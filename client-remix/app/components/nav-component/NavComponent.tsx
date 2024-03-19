@@ -15,7 +15,6 @@ export default function NavComponent() {
         {/* <Link className={pathFirstString === '/cats' ? `${c.link} ${c.active}` : c.link} to='/cats'>
           Cats
         </Link> */}
-        <Link to="search?name=remix">Search for remix</Link>
         <Link to="cat-profile/1">Cat profile</Link>
       </nav>
     </>
