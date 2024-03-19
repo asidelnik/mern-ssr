@@ -2,8 +2,8 @@ import { json, type MetaFunction } from "@remix-run/node";
 import TopRated from "~/components/top-rated/TopRated";
 import RecentlySearched from "~/components/recently-searched/RecentlySearched";
 import { getTopRatedCats } from "~/requests/requests";
-import { CatType } from "~/types/CatType";
 import { useLoaderData } from "@remix-run/react";
+import { CatSmallCardType } from "~/types/CatSmallCardType";
 
 export const meta: MetaFunction = () => {
   return [
@@ -13,12 +13,12 @@ export const meta: MetaFunction = () => {
 };
 
 export async function loader() {
-  const cats = await getTopRatedCats<CatType[]>()
+  const cats = await getTopRatedCats<CatSmallCardType[]>()
   return json(cats);
 }
 
 export default function Index() {
-  const cats = useLoaderData<CatType[]>();
+  const cats = useLoaderData<CatSmallCardType[]>();
 
   return (
     <>

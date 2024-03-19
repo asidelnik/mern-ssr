@@ -19,7 +19,3 @@ type Address = {
   country: string;
   zipCode: string;
 };
-
-export type CatCardProps = CatType & {
-  loading?: 'eager' | 'lazy';
-};
