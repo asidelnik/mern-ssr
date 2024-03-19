@@ -41,11 +41,17 @@ catsRouterV2.get('/search', async (_req: Request, res: Response) => {
       res.status(500).json({ message: 'Error fetching data - collections' });
     } else {
       const name = _req.query.name as string;
+      const skip = _req.query.skip ? parseInt(_req.query.skip as string) : 0;
+      const limit = _req.query.limit
+        ? parseInt(_req.query.limit as string)
+        : 10;
       const results = (await collections.cats
         .find({
           name: new RegExp(name, 'i'),
         })
-        .limit(10)
+        .sort({ likeCount: -1 })
+        .skip(skip)
+        .limit(limit)
         .project<CatSmallCard>({
           id: 1,
           name: 1,
