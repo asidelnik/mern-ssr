@@ -41,28 +41,35 @@ catsRouterV2.get('/search', async (_req: Request, res: Response) => {
       res.status(500).json({ message: 'Error fetching data - collections' });
     } else {
       const name = _req.query.name as string;
-      const skip = _req.query.skip ? parseInt(_req.query.skip as string) : 0;
-      const limit = _req.query.limit
-        ? parseInt(_req.query.limit as string)
-        : 10;
-      const results = (await collections.cats
-        .find({
-          name: new RegExp(name, 'i'),
-        })
-        .sort({ likeCount: -1 })
-        .skip(skip)
-        .limit(limit)
-        .project<CatSmallCard>({
-          id: 1,
-          name: 1,
-          age: 1,
-          weightG: 1,
-          image: 1,
-          likeCount: 1,
-          breed: 1,
-        })
-        .toArray()) as CatSmallCard[];
-      res.status(200).json(results);
+      const catsCount = await collections.cats.countDocuments({
+        name: new RegExp(name, 'i'),
+      });
+
+      let cats: CatSmallCard[] = [];
+      const page = _req.query.page ? parseInt(_req.query.page as string) : 0;
+      const limit = _req.query.limit ? parseInt(_req.query.limit as string) : 4;
+      const skip = page * limit;
+
+      if (catsCount > 0) {
+        cats = (await collections.cats
+          .find({
+            name: new RegExp(name, 'i'),
+          })
+          .sort({ likeCount: -1 })
+          .skip(skip)
+          .limit(limit)
+          .project<CatSmallCard>({
+            id: 1,
+            name: 1,
+            age: 1,
+            weightG: 1,
+            image: 1,
+            likeCount: 1,
+            breed: 1,
+          })
+          .toArray()) as CatSmallCard[];
+      }
+      res.status(200).json({ cats, catsCount });
     }
   } catch (err) {
     console.error(err);
