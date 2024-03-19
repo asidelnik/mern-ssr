@@ -1,5 +1,6 @@
 import { CatSmallCardType } from "./CatSmallCardType";
 
-export type SearchResultsProps = {
+export type SearchResponseType = {
+  catsCount: number;
   cats: CatSmallCardType[];
 };

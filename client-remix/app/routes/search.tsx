@@ -1,25 +1,42 @@
+import c from '~/route-css-modules/search/Search.module.css';
 import { LoaderFunctionArgs, json } from "@remix-run/node";
 import { useLoaderData, useSearchParams } from "@remix-run/react";
 import SearchResults from "~/components/search-results/SearchResults";
 import { getCatsByName } from "~/requests/requests";
-import { CatSmallCardType } from "~/types/CatSmallCardType";
+import { SearchResponseType } from '~/types/SearchResponseType';
+import Pagination from '~/components/pagination/Pagination';
+import { defaultPaginationLimit } from '~/constants/api';
 
-export const loader = async ({
-  request,
-}: LoaderFunctionArgs) => {
+export async function loader({ request }: LoaderFunctionArgs) {
   const url = new URL(request.url);
-  const name = url.searchParams.get("name");
-  const cats = await getCatsByName<CatSmallCardType[]>(name);
-  return json(cats);
-};
+  const name = url.searchParams.get("name") || '';
+  const page = parseInt(url.searchParams.get("page") || '0');
+  const limit = parseInt(url.searchParams.get("limit") || defaultPaginationLimit.toString());
 
-export default function Search() {
-  const cats = useLoaderData<CatSmallCardType[]>();
-  const [searchParams] = useSearchParams()
-  const name = searchParams.get('name')
+  const data = await getCatsByName<SearchResponseType>(name, page, limit);
+  return json(data);
+}
+
+export default function Component() {
+  const { catsCount, cats } = useLoaderData<SearchResponseType>();
+  const [searchParams] = useSearchParams();
+  const name = searchParams.get("name") || '';
+  const limit = parseInt(searchParams.get("limit") || defaultPaginationLimit.toString());
+  const page = parseInt(searchParams.get("page") || '0');
+  const totalPages = Math.ceil(catsCount / limit);
+
   return (
     <>
-      <SearchResults name={name} cats={cats} />
+      {name !== null && cats && cats?.length > 0 && (
+        <>
+          <div className={c.container}>
+            <p>Searched: <span className={c.searchedValue}>{name || ""}</span></p>
+            <SearchResults cats={cats} />
+            <Pagination name={name} currentPage={page} limit={limit} totalPages={totalPages} />
+          </div>
+        </>
+      )}
+      {name !== null && cats?.length === 0 && <div className="main-container-message"><h2>No cats found</h2></div>}
     </>
   )
 }
