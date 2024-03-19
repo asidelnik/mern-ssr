@@ -46,7 +46,16 @@ catsRouterV2.get('/search', async (_req: Request, res: Response) => {
           name: new RegExp(name, 'i'),
         })
         .limit(10)
-        .toArray()) as CatModel[];
+        .project<CatSmallCard>({
+          id: 1,
+          name: 1,
+          age: 1,
+          weightG: 1,
+          image: 1,
+          likeCount: 1,
+          breed: 1,
+        })
+        .toArray()) as CatSmallCard[];
       res.status(200).json(results);
     }
   } catch (err) {
