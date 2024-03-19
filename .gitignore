@@ -62,3 +62,6 @@ __tests__/
 # Ignore .css & css.map files in /client-remix/app/components
 client-remix/app/components/**/*.css
 client-remix/app/components/**/*.css.map
+
+client-remix/app/route-css-modules/**/*.css
+client-remix/app/route-css-modules/**/*.css.map
