@@ -2,6 +2,7 @@ import express, { Request, Response } from 'express';
 import { ObjectId } from 'mongodb';
 import { collections } from '../services/database.service';
 import CatModel from '../models/cat';
+import CatSmallCard from '../models/cat-small-card';
 
 // Create an instance of the express router.
 const catsRouterV2 = express.Router();
@@ -15,7 +16,16 @@ catsRouterV2.get('/top-rated', async (_req: Request, res: Response) => {
         .find()
         .sort({ likeCount: -1 })
         .limit(5)
-        .toArray()) as CatModel[];
+        .project<CatSmallCard>({
+          id: 1,
+          name: 1,
+          age: 1,
+          weightG: 1,
+          image: 1,
+          likeCount: 1,
+          breed: 1,
+        })
+        .toArray()) as CatSmallCard[];
       res.status(200).json(results);
     }
   } catch (err) {
