@@ -13,7 +13,7 @@ export default function TopRated({ cats }: TopRatedProps) {
       {cats?.length > 0 && (
         <div className={c.cardsContainer}>
           {cats.map((cat: CatType) => (
-            <CatSmallCard key={cat._id} {...cat} fetchPriority="high" />
+            <CatSmallCard key={cat._id} {...cat} loading="eager" />
           ))}
         </div>
       )}

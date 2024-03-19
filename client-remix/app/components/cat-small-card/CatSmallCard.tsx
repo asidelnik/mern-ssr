@@ -10,7 +10,7 @@ import { LiaBirthdayCakeSolid } from "react-icons/lia";
 import { TbWeight } from "react-icons/tb";
 
 export default function CatSmallCard(props: CatCardProps) {
-  const { _id, name, likeCount, breed, image, age, weightG, fetchPriority } = props;
+  const { _id, name, likeCount, breed, image, age, weightG, loading } = props;
   const [isLikedClicked, setIsLikedClicked] = useState<boolean>(false);
   const [updatedLikeCount2, setUpdatedLikeCount] = useState<number>(likeCount);
   const [isLoading, setIsLoading] = useState(false);
@@ -35,7 +35,7 @@ export default function CatSmallCard(props: CatCardProps) {
     <>
       <div className={c.smallCardContainer}>
         <Link to={`/cat-profile/${_id}`}>
-          <img src={image} alt={name} width={300} height={300} fetchPriority={fetchPriority} />
+          <img src={image} alt={name} width={300} height={300} loading={loading} />
         </Link>
         <div className={c.cardInfoContainer}>
           <div className={c.cardInfo}>

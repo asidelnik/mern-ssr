@@ -21,5 +21,5 @@ type Address = {
 };
 
 export type CatCardProps = CatType & {
-  fetchPriority?: 'high' | 'low' | 'auto';
+  loading?: 'eager' | 'lazy';
 };
