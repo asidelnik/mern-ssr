@@ -7,3 +7,5 @@ export const serverPaths = {
   search: '/cats/search/',
   likeCat: '/cats/add-like',
 };
+
+export const defaultPaginationLimit = 5;

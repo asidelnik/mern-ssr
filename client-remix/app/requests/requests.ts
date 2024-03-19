@@ -9,11 +9,11 @@ export async function getTopRatedCats<T>(): Promise<T> {
   return res.json() as Promise<T>;
 }
 
-export async function getCatsByName<T>(name: string | null): Promise<T> {
+export async function getCatsByName<T>(name: string, page: number, limit: number): Promise<T> {
   // if (name === null) {
   //   throw new Error('No cat searched');
   // }
-  const path = `${baseUrl}${serverPaths.search}?name=${name}`;
+  const path = `${baseUrl}${serverPaths.search}?name=${name}&page=${page}&limit=${limit}`;
   const res = await fetch(path, { cache: 'no-cache' });
   if (!res.ok) {
     throw new Error('Please try later');
