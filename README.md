@@ -5,6 +5,7 @@
 - Typescript
 - MongoDB + Atlas
 - Next.JS
+- Remix
 - React
 
 
