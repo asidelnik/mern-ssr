@@ -58,3 +58,10 @@ __tests__/
 *.test.js
 
 # Optional: Ignore generated documentation files
+
+# Ignore .css & css.map files in /client-remix/app/components
+client-remix/app/components/**/*.css
+client-remix/app/components/**/*.css.map
+
+client-remix/app/route-css-modules/**/*.css
+client-remix/app/route-css-modules/**/*.css.map

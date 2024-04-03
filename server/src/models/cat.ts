@@ -1,21 +1,5 @@
 import { ObjectId } from 'mongodb';
-
-export default class CatModel {
-  constructor(
-    public name: string,
-    public birthday: string, // ISODate format
-    public age: number,
-    public address: Address,
-    public favoriteFood: string,
-    public colors: string[],
-    public heightCM: number,
-    public weightG: number,
-    public image: string,
-    public likeCount: number,
-    public breed: string,
-    public id?: ObjectId
-  ) {}
-}
+import CatSmallCard from './cat-small-card';
 
 class Address {
   constructor(
@@ -25,3 +9,24 @@ class Address {
     public zipCode: string
   ) {}
 }
+
+export default class CatModel extends CatSmallCard {
+  constructor(
+    name: string,
+    age: number,
+    weightG: number,
+    image: string,
+    likeCount: number,
+    breed: string,
+    id: ObjectId | undefined,
+    public birthday: string, // ISODate format
+    public address: Address,
+    public favoriteFood: string,
+    public colors: string[],
+    public heightCM: number
+  ) {
+    super(name, age, weightG, image, likeCount, breed, id);
+  }
+}
+
+  
