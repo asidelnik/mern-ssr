@@ -1,13 +1,12 @@
-# Pet Website
+# MERN and SSR
 ## Stack
-- Node.JS
-- Express.JS
+- React.JS
 - Typescript
-- MongoDB + Atlas
 - Next.JS
 - Remix
-- React
-
+- Node.JS
+- Express.JS
+- MongoDB + Atlas
 
 ## Top rated cats - home page
 ![image](https://github.com/asidelnik/pet-website/assets/10272524/d4e0a3d6-f162-410c-aef9-f6e70fa26613)
