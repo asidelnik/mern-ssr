@@ -1,4 +1,4 @@
-# MERN and SSR
+# MERN and SSR - small website study
 ## Stack
 - React.JS
 - Typescript
